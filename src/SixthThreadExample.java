@@ -1,16 +1,16 @@
 public class SixthThreadExample implements Runnable {
-    @Override //аннотация, которая говорит, что мы будем переопределять следующий метод
-    public void run() { //обязательный для переопределения метод, так как наш класс наследуется от интерфейса Runnable, в котором
-        //мы реализуем логику, которая будет выполняться в новом потоке
-        System.out.println("Start of the Thread: " + getClass().getName());
-        System.out.println("waiting 3 seconds");
+    @Override //анотація, яка вказує, що ми будемо переозначати наступний метод
+    public void run() { //обов'язковий для переозначення метод, оскільки наш клас реалізує інтерфейс Runnable, в якому
+        //ми реалізуємо логіку, яка буде виконуватися в новому потоці
+        System.out.println("Початок потоку: " + getClass().getName());
+        System.out.println("Очікуємо 3 секунди");
 
-        try { //пытаемся выполнить следующий код
-            Thread.sleep(3000); //усыпляем основной поток
+        try { //намагаємось виконати наступний код
+            Thread.sleep(3000); //зупиняємо потік на 3 секунди
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        System.out.println("Thread " + getClass().getName() + " finished his work.");
+        System.out.println("Потік " + getClass().getName() + " завершив свою роботу.");
     }
 }
